@@ -1,0 +1,107 @@
+<!--
+/**
+ * @module x-instagram
+ */
+/**
+ * Element access to the Instagram API for querying results
+ *
+ * x-instagram is an element for making search queries to the
+ * Instagram API and displaying results based on the response
+ * returned.
+ *
+ * Example:
+ *
+ *     <x-instagram tag="javascript"></x-instagram>
+ *
+ * @class x-instagram
+ * @blurb Element access to the Instagram API
+ * @author Addy Osmani
+ * @categories Data
+ *
+ */
+/**
+ * Fired after results are loaded
+ *
+ * @event x-instagram-load
+ */
+-->
+
+<link rel="import" href="../app/bower_components/polymer-jsonp/polymer-jsonp.html">
+
+<polymer-element name="x-instagram" attributes="clientId tag count">
+    <template>
+        <style>
+            :host {
+                * {
+                    padding: 0;
+                    margin: 0;
+                    float: left;
+                }
+            }
+            .instagram {
+                float: left;
+                height: 100%;
+                width: 100%;
+            }
+            .item {
+                float: left;
+                width: 10%;
+                margin: 0;
+                padding: 0;
+            }
+            .item img {
+                float: left;
+                width: 100%;
+                max-width: 100%;
+            }
+        </style>
+        <polymer-jsonp id="ajax" auto url="https://api.instagram.com/v1/tags/{{tag}}/media/recent/?client_id={{clientId}}&count={{count}}&callback="> </polymer-jsonp>
+
+        <div class="instagram">
+            <template id="photos" repeat="{{item in photos}}" index="i">
+                <div id="{{item.index}}" class="item">
+                    <img src="{{item.images.low_resolution.url}}" />
+                </div>
+            </template>
+        </div>
+    </template>
+    <script>
+        Polymer('x-instagram', {
+            /**
+             * The number of results to request/display
+             *
+             * @attribute count
+             * @type integer
+             * @default 30
+             */
+            count: 30,
+            /**
+             * The array of photos
+             *
+             * @attribute photos
+             * @type array
+             * @default []
+             */
+            photos: [],
+            /**
+             * The client ID used to authenticate with Instagram's API
+             * This should ideally be changed to your own ID.
+             *
+             * @attribute clientId
+             * @type string
+             * @default a842f4f9e2884d5598d3c5146eb98d11
+             */
+            clientId: 'a842f4f9e2884d5598d3c5146eb98d11',
+            ready: function() {
+                this.$.photos.model = this.photos;
+                this.$.ajax.addEventListener("polymer-response",
+                        function(e) {
+                            this.photos = {photos: e.detail.response.data};
+                            this.$.photos.model = {photos: e.detail.response.data};
+                            this.fire('x-instagram-load', {response: e.detail.response.data});
+                        }.bind(this)
+                );
+            }
+        });
+    </script>
+</polymer-element>
