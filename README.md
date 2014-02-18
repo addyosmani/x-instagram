@@ -1,6 +1,6 @@
 # &lt;x-instagram&gt;
 
-A Polymer element for querying results from the Instagram API
+A [Polymer](http://polymer-project.org) element for querying results from the [Instagram API](http://instagram.com/developer/)
 
 > Maintained by [Addy Osmani](https://github.com/addyosmani).
 
@@ -22,7 +22,6 @@ bower install x-instagram
 
     ```html
     <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.1.4/platform.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.1.4/polymer.js"></script>
     ```
 
 2. Import Custom Element:
