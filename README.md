@@ -8,56 +8,56 @@ A [Polymer](http://polymer-project.org) element for querying results from the [I
 
 > [Check it live](http://addyosmani.github.io/x-instagram).
 
-## Installation
+## Install
 
 Using [Bower](http://bower.io), run:
 
-```shell
-bower install x-instagram
+```bash
+$ bower install --save x-instagram
 ```
 
 ## Usage
 
 1. Import Web Components' polyfill:
 
-    ```html
-    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.1.4/platform.js"></script>
-    ```
+```html
+<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.1.4/platform.js"></script>
+```
 
 2. Import Custom Element:
 
-    ```html
-    <link rel="import" href="src/x-instagram.html">
-    ```
+```html
+<link rel="import" href="src/x-instagram.html">
+```
 
 3. Start using it!
 
-    ```html
-    <x-instagram><x-instagram>
-    ```
+```html
+<x-instagram><x-instagram>
+```
 
 ## Setup
 
 In order to run it locally you'll need a basic server setup.
 
-1. Install [NodeJS](http://nodejs.org/download/).
-2. Install [GruntJS](http://gruntjs.com/):
+1. Install [Node.js](http://nodejs.org/download/)
+2. Install [Grunt](http://gruntjs.com/):
 
-    ```sh
-    $ [sudo] npm install -g grunt-cli
-    ```
+```sh
+$ npm install -g grunt-cli
+```
 
 3. Install local dependencies:
 
-    ```sh
-    $ npm install
-    ```
+```sh
+$ npm install
+```
 
 4. Run a local server and open `http://localhost:8000`.
 
-    ```sh
-    $ grunt connect
-    ```
+```sh
+$ grunt connect
+```
 
 ## Options
 
