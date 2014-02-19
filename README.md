@@ -65,6 +65,7 @@ Attribute  | Options                   | Default             | Description
 ---        | ---                       | ---                 | ---
 `tag`      | *string*                  | ``               | The tag to query for (e.g 'selfie')
 `count`      | *integer*       | `30`               | The max number of results to return
+`photosPerRow`      | *integer*       | `10`               | The number of photos that will show up on a row
 `clientId`   | *string*                     | See source               | An Instagram API developer client Id
 
 ## Contributing
