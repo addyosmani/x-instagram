@@ -26,7 +26,7 @@
  */
 -->
 
-<link rel="import" href="../app/bower_components/polymer-jsonp/polymer-jsonp.html">
+<link rel="import" href="../bower_components/polymer-jsonp/polymer-jsonp.html">
 
 <polymer-element name="x-instagram" attributes="clientId tag count photosPerRow">
     <template>
@@ -62,7 +62,9 @@
         <div class="instagram">
             <template id="photos" repeat="{{item in photos}}" index="i">
                 <div id="{{item.index}}" class="item" style="width: {{photoWidthPercent}}%">
-                    <img src="{{item.images.low_resolution.url}}">
+                    <a href="{{item.link}}" target="_blank">
+                        <img src="{{item.images.standard_resolution.url}}">
+                    </a>
                 </div>
             </template>
         </div>
