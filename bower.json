@@ -1,6 +1,6 @@
 {
   "name": "x-instagram",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/addyosmani/x-instagram",
   "authors": [
     "Addy Osmani <addyosmani@gmail.com>"
@@ -21,8 +21,8 @@
     "tests"
   ],
   "dependencies": {
-    "platform": "Polymer/platform#~0.2.0",
-    "polymer": "Polymer/polymer#~0.2.0",
-    "polymer-jsonp": "Polymer/polymer-jsonp#~0.2.0"
+    "platform": "Polymer/platform#>=0.3.0",
+    "polymer": "Polymer/polymer#>=0.3.0",
+    "polymer-jsonp": "Polymer/polymer-jsonp#>=0.3.0"
   }
 }
