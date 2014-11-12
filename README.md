@@ -33,7 +33,7 @@ $ bower install --save x-instagram
 3. Start using it!
 
 ```html
-<x-instagram><x-instagram>
+<x-instagram></x-instagram>
 ```
 
 ## Setup
